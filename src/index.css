@@ -1,0 +1,181 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url("https://fonts.googleapis.com/css2?family=Figtree:wght@500&display=swap");
+
+body {
+  font-family: "Figtree", sans-serif;
+}
+
+.spa {
+  white-space: nowrap;
+}
+
+.bg-n {
+  background: none;
+  border: none !important;
+}
+
+.hov:hover {
+  background: #333;
+  border-radius: 12px;
+  align-items: center;
+}
+
+h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.ant-modal-content {
+  width: 587px;
+  /* width: 587px; */
+  border-radius: 24px;
+}
+
+.ant-modal-close {
+  top: -10px !important;
+  background-color: #296cd6 !important;
+  border-radius: 50% !important;
+  color: white !important;
+  padding: 10px;
+}
+
+.ant-modal-close-icon {
+  width: 10px;
+  height: 10px;
+}
+
+:where(.css-dev-only-do-not-override-1adbn6x).ant-modal-root .ant-modal-mask {
+  background: rgba(0, 0, 0, 0.85);
+}
+
+.payment-text {
+  color: #121212 !important;
+  font-weight: 300 !important;
+}
+
+.bg-signUpShadow {
+  background-repeat: no-repeat;
+}
+
+.toggle-switch:before {
+  content: "";
+  position: absolute;
+  width: 1.25rem;
+  height: 1.25rem;
+  border-radius: 50%;
+  top: 0;
+  left: 0;
+  transform: scale(1.1);
+  box-shadow: 0 0.125rem 0.5rem rgba(0, 0, 0, 0.2);
+  background-color: white;
+  transition: 0.2s ease-in-out;
+}
+
+.toggle-switch:checked {
+  background-color: #7f9cf5;
+}
+
+.toggle-switch:checked:before {
+  left: 1.25rem;
+}
+
+.bg-dashboard {
+  background-image: url("./assets/common/dashboard-bg-image.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  /* background-position: left center; */
+}
+
+.bg-lender {
+  background-image: url("./assets/common/lenderDashboard.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  /* background-position: left center; */
+}
+
+.tooltip-container {
+  position: relative;
+  display: inline-block;
+}
+
+.ant-menu-item-selected {
+  background-color: #d0e9fd7a !important;
+  backdrop-filter: blur(21px);
+}
+
+.tooltip {
+  visibility: hidden;
+  width: 160px;
+  background-color: #121212;
+  /* color: #fff; */
+  border: 1px solid #bbc6d4;
+  border-radius: 10px;
+  padding: 10px;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -80px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.tooltip-container:hover .tooltip {
+  visibility: visible;
+  opacity: 1;
+}
+
+.modal {
+  position: absolute;
+  top: 50px;
+  left: 100px;
+  transform: translateX(-50%);
+  z-index: 50;
+  background-color: #000;
+  color: #fff;
+  border-radius: 16px;
+  padding: 5px 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.modal::before {
+  content: "";
+  position: absolute;
+  top: -8.5px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 0 8px 8px;
+  border-style: solid;
+  border-color: transparent transparent #000 transparent;
+}
+
+/* Add this to your CSS/SCSS file */
+.active-menu-item {
+  background-color: #f8f5f5da !important;
+  padding: 0 0;
+}
+
+.ant-menu-item-selected {
+  background-color: transparent !important;
+}
+
+.toggle-bg {
+  background-color: rgba(0, 0, 0, 0.25);
+}
+
+.filter-modal::before {
+  content: "";
+  position: absolute;
+  top: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 0 8px 8px;
+  border-style: solid;
+  border-color: transparent transparent #000 transparent;
+}

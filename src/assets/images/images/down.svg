@@ -1,0 +1,39 @@
+<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="24" height="24" fill="#262626"/>
+<g id="Financial institution">
+<path d="M-1590 -3851C-1590 -4071.91 -1410.91 -4251 -1190 -4251H18396C18616.9 -4251 18796 -4071.91 18796 -3851V3297C18796 3517.91 18616.9 3697 18396 3697H-1190C-1410.91 3697 -1590 3517.91 -1590 3297V-3851Z" fill="#6B6B6B"/>
+<path d="M-1190 -4250H18396V-4252H-1190V-4250ZM18795 -3851V3297H18797V-3851H18795ZM18396 3696H-1190V3698H18396V3696ZM-1589 3297V-3851H-1591V3297H-1589ZM-1190 3696C-1410.36 3696 -1589 3517.36 -1589 3297H-1591C-1591 3518.47 -1411.47 3698 -1190 3698V3696ZM18795 3297C18795 3517.36 18616.4 3696 18396 3696V3698C18617.5 3698 18797 3518.47 18797 3297H18795ZM18396 -4250C18616.4 -4250 18795 -4071.36 18795 -3851H18797C18797 -4072.47 18617.5 -4252 18396 -4252V-4250ZM-1190 -4252C-1411.47 -4252 -1591 -4072.47 -1591 -3851H-1589C-1589 -4071.36 -1410.36 -4250 -1190 -4250V-4252Z" fill="white" fill-opacity="0.1"/>
+<g id="Marketplace - when lender checks market place">
+<rect width="1440" height="1364" transform="translate(-179 -511)" fill="white"/>
+<g id="Hey">
+<g clip-path="url(#clip0_178_3132)">
+<rect x="-41" y="-24" width="1246" height="72" rx="16" fill="#FAFAFA"/>
+<g id="Frame 1000004119" filter="url(#filter0_d_178_3132)">
+<rect x="-31" y="-14" width="200" height="52" rx="16" fill="white"/>
+<g id="Frame 115496">
+<g id="Iconex/Light/Down">
+<g id="Down">
+<path id="Vector" d="M8 16L11.2929 19.2929C11.6834 19.6834 12.3166 19.6834 12.7071 19.2929L16 16M12 19L12 5" stroke="#296CD6" stroke-width="1.5" stroke-linecap="round"/>
+</g>
+</g>
+</g>
+</g>
+</g>
+</g>
+</g>
+</g>
+<defs>
+<filter id="filter0_d_178_3132" x="-65" y="-43" width="268" height="120" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+<feOffset dy="5"/>
+<feGaussianBlur stdDeviation="17"/>
+<feColorMatrix type="matrix" values="0 0 0 0 0.160784 0 0 0 0 0.423529 0 0 0 0 0.839216 0 0 0 0.08 0"/>
+<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_178_3132"/>
+<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_178_3132" result="shape"/>
+</filter>
+<clipPath id="clip0_178_3132">
+<rect x="-41" y="-24" width="1246" height="72" rx="16" fill="white"/>
+</clipPath>
+</defs>
+</svg>
