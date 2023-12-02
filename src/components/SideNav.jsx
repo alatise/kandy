@@ -19,6 +19,13 @@ const SideNav = () => {
     return location.pathname.startsWith(path);
   };
 
+  const commonStyle = {
+    borderRadius: "12px",
+    background:
+      "radial-gradient(468.89% 262.15% at 0.9% 2.98%, rgba(255, 255, 255, 0.30) 0%, rgba(255, 255, 255, 0.00) 100%)",
+    boxShadow: "0px 0px 42px 0px #296CD6",
+  };
+
   const sidebarLinks = [
     {
       key: "1",
@@ -30,6 +37,7 @@ const SideNav = () => {
         />
       ),
       label: "Dashboard",
+      style: isActive("/financial/dashboard") ? commonStyle : {},
     },
     {
       key: "2",
@@ -45,6 +53,7 @@ const SideNav = () => {
         />
       ),
       label: "Marketplace",
+      style: isActive("/financial/marketplace") ? commonStyle : {},
     },
     {
       key: "3",
@@ -60,6 +69,7 @@ const SideNav = () => {
         />
       ),
       label: "Transaction Settlement",
+      style: isActive("/financial/transaction-settlement") ? commonStyle : {},
     },
     {
       key: "4",
@@ -71,6 +81,7 @@ const SideNav = () => {
         />
       ),
       label: "User Profile",
+      style: isActive("/financial/profile") ? commonStyle : {},
     },
   ];
 
@@ -100,6 +111,7 @@ const SideNav = () => {
           <Menu.Item
             key={item.key}
             icon={<Link to={item.path}>{item.icon}</Link>}
+            style={item.style}
           >
             {item.label}
           </Menu.Item>
