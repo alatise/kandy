@@ -1,22 +1,17 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
 import { Layout, Menu, Button, theme } from "antd";
-// import HomeInactive from "../../src/assets/sidebar-items/home-inactive.svg";
-import HomeActive from "../../src/assets/sidebar-items/home-active.svg";
-import MarketPlaceInactive from "../../src/assets/sidebar-items/marketplace-inactive.svg";
-// import MarketPlaceActive from "../../src/assets/sidebar-items/marketplace-active.svg";
-import Flag from "../../src/assets/sidebar-items/flag.svg";
-import Users from "../../src/assets/sidebar-items/users.svg";
-import Buoy from "../../src/assets/sidebar-items/life-buoy.svg";
-import Settings from "../../src/assets/sidebar-items/settings.svg";
+
+import SideNav from "./SideNav";
 
 const { Sider, Content } = Layout;
 
 const FinancialLayout = ({ children }) => {
   const [collapsed, setCollapsed] = useState(true);
+
   const {
     token: { colorBgContainer },
   } = theme.useToken();
+
   return (
     <Layout className="">
       <div className="hidden lg:block">
@@ -52,7 +47,9 @@ const FinancialLayout = ({ children }) => {
               height: 26,
             }}
           />
-          <div
+          <SideNav />
+
+          {/* <div
             style={{
               display: "flex",
               alignItems: "stretch",
@@ -60,8 +57,9 @@ const FinancialLayout = ({ children }) => {
               color: "white",
               // justifyContent: "space-around",
             }}
-          >
-            <Menu
+          > */}
+
+          {/* <Menu
               //   theme="dark"
               style={{
                 backgroundColor: "#296CD6",
@@ -140,8 +138,8 @@ const FinancialLayout = ({ children }) => {
                   ),
                 },
               ]}
-            />
-          </div>
+            /> */}
+          {/* </div> */}
         </Sider>
       </div>
       <Layout>
