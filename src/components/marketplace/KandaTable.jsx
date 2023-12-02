@@ -10,6 +10,7 @@ import EllipseLogo from "../../assets/common/Ellipse.png";
 import Goal from "../../assets/common/goal.svg";
 import Dollar from "../../assets/common/dollar.svg";
 import { Link } from "react-router-dom";
+import { modalData } from "../../utils/marketplaceData";
 
 const twoColors = { 0: "#296CD6", 12: "#F4F4F4" };
 
@@ -47,7 +48,6 @@ const KandaTable = ({ header, data, tableType }) => {
   return (
     <div className="w-full bg-[#FAFAFA] overflow-x-auto shadow-md sm:rounded-lg">
       {/* CHECK OFFER */}
-
       <label className="flex items-center">
         <table className="mx-[20px] mt-5 w-[98%] bg-[#FAFAFA] text-sm text-left text-gray-500">
           {showCheckOffer && (
@@ -57,12 +57,24 @@ const KandaTable = ({ header, data, tableType }) => {
                 top: checkOfferPosition.top,
                 left: checkOfferPosition.left,
               }}
-              className={`absolute flex bg-black w-max py-4 px-3 rounded-[8px] gap-2 text-white text-[16px] translate-x-[-50%] translate-y-[20px] z-[999] cursor-pointer`}
+              className={`absolute flex flex-col bg-black w-max py-4 px-3 rounded-[8px] gap-6 text-white text-[16px] translate-x-[-50%] translate-y-[20px] z-[999] cursor-pointer`}
             >
-              <img src={eye} alt="eye" />
-              <p>Check offer</p>
+              {modalData.map((item) => {
+                if (item.type !== tableType) return;
+                return (
+                  <div className="flex gap-2">
+                    <img
+                      src={item.img}
+                      alt="eye"
+                      className="w-[24px] h-[24px]"
+                    />
+                    <p>{item.text}</p>
+                  </div>
+                );
+              })}
             </div>
           )}
+
           <thead className="text-xs border-b text-[#7D8897] font-extralight">
             <tr>
               {header.map((column, index) => (

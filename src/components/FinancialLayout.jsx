@@ -29,13 +29,9 @@ const FinancialLayout = ({ children }) => {
           collapsible
           collapsed={collapsed}
           breakpoint={"lg"}
-
-          // collapsedWidth={0}
-          // className="hiddem lg:block"
         >
           <Button
             type="text"
-            //   icon={collapsed ? <MenuUnfoldOutlined /> : <MenuFoldOutlined />}
             className="bg-group bg-no-repeat bg-center"
             onClick={() => setCollapsed(!collapsed)}
             style={{
@@ -48,107 +44,12 @@ const FinancialLayout = ({ children }) => {
             }}
           />
           <SideNav />
-
-          {/* <div
-            style={{
-              display: "flex",
-              alignItems: "stretch",
-              flexDirection: "column",
-              color: "white",
-              // justifyContent: "space-around",
-            }}
-          > */}
-
-          {/* <Menu
-              //   theme="dark"
-              style={{
-                backgroundColor: "#296CD6",
-                display: "flex",
-                flexDirection: "column",
-                justifyContent: "space-between",
-                color: "white",
-              }}
-              mode="inline"
-              defaultSelectedKeys={["1"]}
-              items={[
-                {
-                  key: "1",
-                  icon: (
-                    <Link to="/financial/dashboard">
-                      <img src={HomeActive} alt="Home" />
-                    </Link>
-                  ),
-                  label: "Dashboard",
-                },
-
-                {
-                  key: "2",
-                  icon: (
-                    <Link to="/financial/marketplace">
-                      <img src={MarketPlaceInactive} alt="Home" />
-                    </Link>
-                  ),
-                  label: "Marketplace",
-                },
-                {
-                  key: "3",
-                  icon: (
-                    <Link to="/financial/transaction-settlement">
-                      <img src={Flag} alt="Flag" />
-                    </Link>
-                  ),
-                  label: "Transaction settlement",
-                },
-                {
-                  key: "4",
-                  icon: (
-                    <Link to="/financial/profile">
-                      <img src={Users} alt="Users" />
-                    </Link>
-                  ),
-                  label: "User Profile",
-                },
-              ]}
-            />
-
-            <Menu
-              style={{
-                backgroundColor: "#296CD6",
-                position: "absolute",
-                bottom: 0,
-                left: 0,
-                color: "white",
-              }}
-              mode="inline"
-              items={[
-                {
-                  key: "5",
-                  icon: (
-                    <Link to="/financial/buoy">
-                      <img src={Buoy} alt="Buoy" />
-                    </Link>
-                  ),
-                },
-                {
-                  key: "6",
-                  icon: (
-                    <Link to="/financial/settings">
-                      <img src={Settings} alt="Settings" />
-                    </Link>
-                  ),
-                },
-              ]}
-            /> */}
-          {/* </div> */}
         </Sider>
       </div>
       <Layout>
         <Content
           style={{
-            // paddingLeft: "56.5px",
             paddingTop: "40px",
-            // paddingRight: "55.32px",
-            // padding: 24,
             minHeight: 280,
             background: colorBgContainer,
           }}

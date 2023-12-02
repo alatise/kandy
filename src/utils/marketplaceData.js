@@ -20,6 +20,9 @@ import Password from "../components/transaction/Password";
 import Personal from "../pages/assetPages/profileTabs/Personal";
 import KycAsset from "../pages/assetPages/profileTabs/Kyc";
 import PasswordAsset from "../pages/assetPages/profileTabs/Password";
+import eye from "../assets/images/images/eye.svg";
+import tick from "../assets/images/tick.svg";
+import reject from "../assets/images/reject.svg";
 
 export const marketplaces = [
   {
@@ -115,6 +118,29 @@ export const tableData = [
     agreement: '2 Weeks'
   },
 ];
+
+export const modalData = [
+  {
+    type: 'pending',
+    text: 'Check offer',
+    img: eye
+  },
+  {
+    type: 'completed',
+    text: 'View details',
+    img: eye
+  },
+  {
+    type: 'completed',
+    text: 'Confirm offer',
+    img: tick
+  },
+  {
+    type: 'completed',
+    text: 'Reject asset',
+    img: reject
+  },
+]
 
 
 export const transactionTableData = [
