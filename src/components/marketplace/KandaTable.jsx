@@ -13,7 +13,7 @@ import { Link } from "react-router-dom";
 
 const twoColors = { 0: "#296CD6", 12: "#F4F4F4" };
 
-const KandaTable = ({ header, data }) => {
+const KandaTable = ({ header, data, tableType }) => {
   const [checkOfferPosition, setCheckOfferPosition] = useState({
     top: 50,
     left: 50,
@@ -67,31 +67,39 @@ const KandaTable = ({ header, data }) => {
             <tr>
               {header.map((column, index) => (
                 <th key={index} scope="col" className="px-6 py-3">
-                  {column}
+                  {column.text}
                 </th>
               ))}
               <th></th>
             </tr>
           </thead>
+
           <tbody className="text-[#121212] font-semibold">
-            {data.map((row, rowIndex) => (
+            {data.map((rowData, rowIndex) => (
               <tr key={rowIndex} className="border-b hover:bg-white">
-                {row.map((cell, cellIndex) => (
-                  <td key={cellIndex} className={"px-6 py-4"}>
-                    {cellIndex === 0 ? (
-                      <div className="flex flex-row space-x-1 items-center">
-                        <img
-                          className="w-[32px] h-[32px] object-contain rounded-full"
-                          src={cell.img}
-                          alt=""
-                        />
-                        <p className="text-center mt-[5px]">{cell.name}</p>
-                      </div>
-                    ) : (
-                      cell
-                    )}
-                  </td>
-                ))}
+                <td className={"px-6 py-4"}>
+                  <div className="flex flex-row space-x-1 items-center">
+                    <img
+                      className="w-[32px] h-[32px] object-contain rounded-full"
+                      src={rowData.company.img}
+                      alt=""
+                    />
+                    <p className="text-center mt-[5px]">
+                      {rowData.company.name}
+                    </p>
+                  </div>
+                </td>
+                <td className={"px-6 py-4"}>{rowData.contactPerson}</td>
+                <td className={"px-6 py-4"}>{rowData.revenue}</td>
+                {tableType === "pending" && (
+                  <td className={"px-6 py-4"}>{rowData.netIncome}</td>
+                )}
+                {tableType === "completed" && (
+                  <>
+                    <td className={"px-6 py-4"}>{rowData.repayment}</td>
+                    <td className={"px-6 py-4"}>{rowData.agreement}</td>
+                  </>
+                )}
                 {/* OPTION */}
                 <td>
                   <div
@@ -104,13 +112,8 @@ const KandaTable = ({ header, data }) => {
               </tr>
             ))}
           </tbody>
-
-
-
-
         </table>
       </label>
-
 
       <div className="flex flex-row justify-between mx-[50px] mt-[2rem] mb-[2rem] text-[#7D8897] items-center">
         <div className="flex flex-row">
@@ -177,11 +180,6 @@ const KandaTable = ({ header, data }) => {
           </svg>
         </div>
       </div>
-
-
-
-
-
 
       {/* User  Information  modal */}
       <Modal
@@ -347,11 +345,7 @@ const KandaTable = ({ header, data }) => {
           </p>
           <div className="bg-[#121212] rounded-2xl p-3 flex gap-6">
             <div className="flex items-center gap-3">
-              <img
-                src={EllipseLogo}
-                alt="Ellipse"
-                className="rounded-full"
-              />
+              <img src={EllipseLogo} alt="Ellipse" className="rounded-full" />
               <p className="font-figtree text-base font-medium leading-6 text-[#fff]">
                 Paul cross
               </p>
@@ -359,11 +353,7 @@ const KandaTable = ({ header, data }) => {
             <div className="flex bg-[#303030]  rounded-xl p-4 gap-4">
               <div className="flex flex-col ">
                 <div className="flex gap-1">
-                  <img
-                    src={Goal}
-                    alt=""
-                    className="bg-[#000] [rounded-full"
-                  />
+                  <img src={Goal} alt="" className="bg-[#000] [rounded-full" />
                   <p className="text-[#7D8897]">Asset type</p>
                 </div>
                 <p className="text-[#fff] font-figtree text-1.5xl font-medium leading-normal text-center">
@@ -372,11 +362,7 @@ const KandaTable = ({ header, data }) => {
               </div>
               <div className="flex flex-col">
                 <div className="flex gap-1">
-                  <img
-                    src={Dollar}
-                    alt=""
-                    className="bg-[#000] rounded-full"
-                  />
+                  <img src={Dollar} alt="" className="bg-[#000] rounded-full" />
                   <p className="text-[#7D8897]">Total asset valuation</p>
                 </div>
                 <p className="text-[#fff] font-figtree text-1.5xl font-medium leading-normal text-center">

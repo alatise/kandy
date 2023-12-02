@@ -41,11 +41,29 @@ export const marketplaces = [
   },
 ];
 
+
 export const tableHeader = [
-  "Equity name",
-  "Equity Owner",
-  "Equity valuation",
-  "Equity valuation",
+  {
+    text: "Equity name",
+  },
+  {
+    text: "Equity Owner",
+  },
+  {
+    text: "Equity valuation",
+  },
+  {
+    text: "Equity valuation",
+    type: 'pending'
+  },
+  {
+    text: "Repayment terms",
+    type: 'completed'
+  },
+  {
+    text: "Agreement duration",
+    type: 'completed'
+  },
 ];
 
 export const transactionTableHeader = [
@@ -58,28 +76,46 @@ export const transactionTableHeader = [
   // "Action",
 ];
 
+
 export const tableData = [
-  [
-    { name: "Dangote", img: dangote },
-    "Paul Cross",
-    "$400,000,000",
-    "$400,000,000",
-  ],
-  [{ name: "Airtel", img: Airtel }, "Seth Gig", "$300,000,000", "$300,000,000"],
-  [
-    { name: "Wema Bank", img: wema },
-    "Adewale Ayuba",
-    "$250,000,000",
-    "$250,000,000",
-  ],
-  [
-    { name: "MTN Nigeria", img: mtn },
-    "Mumeen Salman",
-    "$150,000,000",
-    "$150,000,000",
-  ],
-  [{ name: "Julius Berger", img: julius }, "Sodiq Hammed", "$9000", "$9000"],
+  {
+    company: { name: "Dangote", img: dangote },
+    contactPerson: "Paul Cross",
+    revenue: "$400,000,000",
+    netIncome: "$400,000,000",
+    repayment: 'Monthly',
+    agreement: '2 Weeks'
+  },
+  {
+    company: { name: "Airtel", img: Airtel },
+    contactPerson: "Seth Gig",
+    revenue: "$300,000,000",
+    netIncome: "$300,000,000", repayment: 'Monthly',
+    agreement: '2 Weeks'
+  },
+  {
+    company: { name: "Wema Bank", img: wema },
+    contactPerson: "Adewale Ayuba",
+    revenue: "$250,000,000",
+    netIncome: "$250,000,000", repayment: 'Monthly',
+    agreement: '2 Weeks'
+  },
+  {
+    company: { name: "MTN Nigeria", img: mtn },
+    contactPerson: "Mumeen Salman",
+    revenue: "$150,000,000",
+    netIncome: "$150,000,000", repayment: 'Monthly',
+    agreement: '2 Weeks'
+  },
+  {
+    company: { name: "Julius Berger", img: julius },
+    contactPerson: "Sodiq Hammed",
+    revenue: "$9000",
+    netIncome: "$9000", repayment: 'Monthly',
+    agreement: '2 Weeks'
+  },
 ];
+
 
 export const transactionTableData = [
   [

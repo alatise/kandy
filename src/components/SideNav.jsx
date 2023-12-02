@@ -24,6 +24,8 @@ const SideNav = () => {
     background:
       "radial-gradient(468.89% 262.15% at 0.9% 2.98%, rgba(255, 255, 255, 0.30) 0%, rgba(255, 255, 255, 0.00) 100%)",
     boxShadow: "0px 0px 42px 0px #296CD6",
+    // color: isActive("/financial/dashboard") ? "#FFF" : "#82ADF1",
+    color: "white",
   };
 
   const sidebarLinks = [
@@ -37,7 +39,9 @@ const SideNav = () => {
         />
       ),
       label: "Dashboard",
-      style: isActive("/financial/dashboard") ? commonStyle : {},
+      style: isActive("/financial/dashboard")
+        ? commonStyle
+        : { color: "#82ADF1" },
     },
     {
       key: "2",
@@ -53,7 +57,9 @@ const SideNav = () => {
         />
       ),
       label: "Marketplace",
-      style: isActive("/financial/marketplace") ? commonStyle : {},
+      style: isActive("/financial/marketplace")
+        ? commonStyle
+        : { color: "#82ADF1" },
     },
     {
       key: "3",
@@ -69,7 +75,9 @@ const SideNav = () => {
         />
       ),
       label: "Transaction Settlement",
-      style: isActive("/financial/transaction-settlement") ? commonStyle : {},
+      style: isActive("/financial/transaction-settlement")
+        ? commonStyle
+        : { color: "#82ADF1" },
     },
     {
       key: "4",
@@ -81,7 +89,9 @@ const SideNav = () => {
         />
       ),
       label: "User Profile",
-      style: isActive("/financial/profile") ? commonStyle : {},
+      style: isActive("/financial/profile")
+        ? commonStyle
+        : { color: "#82ADF1" },
     },
   ];
 
@@ -102,10 +112,10 @@ const SideNav = () => {
           display: "flex",
           flexDirection: "column",
           justifyContent: "space-between",
-          color: "white",
+          // color: "white",
         }}
         mode="inline"
-        defaultSelectedKeys={["1"]}
+        // defaultSelectedKeys={["1"]}
       >
         {sidebarLinks.map((item) => (
           <Menu.Item
@@ -121,12 +131,12 @@ const SideNav = () => {
       <Menu
         style={{
           backgroundColor: "#296CD6",
-          width: "auto",
+          width: "100%",
           position: "absolute",
           bottom: 0,
-          right: 0,
+          left: 0,
           color: "white",
-          alignSelf: "flex-end",
+          // alignSelf: "flex-end",
         }}
         mode="inline"
       >

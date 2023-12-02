@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState, useSyncExternalStore } from "react";
 import Header from "../components/common/Header";
 import bg from "../assets/images/bgmarket.png";
 import altbg from "../assets/images/altbgmarket.png";
@@ -24,6 +24,9 @@ const MarketPlaceScreen = () => {
   const [modal3Open, setModal3Open] = useState(false);
   const [filterOpen, setFilterOpen] = useState(false);
 
+  const [tableType, setTableType] = useState("pending");
+  const [filteredHeader, setFilteredHeader] = useState([]);
+
   const handleContinueClick = (modalStae, setSetModalState) => {
     setModal1Open(false);
     setModal2Open(false);
@@ -31,6 +34,16 @@ const MarketPlaceScreen = () => {
 
     setSetModalState(true);
   };
+
+  useEffect(() => {
+    if (tableType === "pending") {
+      setFilteredHeader(
+        tableHeader.filter((item) => item.type !== "completed")
+      );
+    } else if (tableType === "completed") {
+      setFilteredHeader(tableHeader.filter((item) => item.type !== "pending"));
+    }
+  }, [tableType]);
 
   return (
     <div className="mb-40">
@@ -81,11 +94,21 @@ const MarketPlaceScreen = () => {
         })}
       </div>
       <div className="mt-8 p-2 bg-[#FAFAFA] rounded-[16px] flex gap-6 items-center">
-        <div className="flex gap-3 py-4 px-8 bg-white w-fit rounded-[16px] cursor-pointer">
+        <div
+          className={`${
+            tableType === "pending" ? "bg-white" : "bg-transparent"
+          } flex gap-3 py-4 px-8  w-fit rounded-[16px] cursor-pointer`}
+          onClick={() => setTableType("pending")}
+        >
           <img src={downActive} alt="down" />
           <p>New requests</p>
         </div>
-        <div className="flex gap-3 py-4 px-8 w-fit rounded-[16px]">
+        <div
+          className={`${
+            tableType === "completed" ? "bg-white" : "bg-transparent"
+          } flex gap-3 py-4 px-8  w-fit rounded-[16px] cursor-pointer`}
+          onClick={() => setTableType("completed")}
+        >
           <img src={checkInactive} alt="check" />
           <p>Completed requests</p>
         </div>
@@ -307,7 +330,11 @@ const MarketPlaceScreen = () => {
         </div>
       </div>
 
-      <KandaTable header={tableHeader} data={tableData} />
+      <KandaTable
+        header={filteredHeader}
+        data={tableData}
+        tableType={tableType}
+      />
     </div>
   );
 };
